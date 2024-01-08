@@ -6,13 +6,6 @@ exports.register = (req, res) => {
     const passward = req.body.passward;
     const email = req.body.email;
 
-    if(!userName || !passward || !email){
-        return res.json({
-            msg : "الرجاء ادخال البيانات",
-            state : 0
-        })
-    }
-
 
     users.push({
         userName : userName,
@@ -44,4 +37,11 @@ exports.login = (req, res) => {
         state : 1,
     })
     
+}
+
+exports.getAllUsersSalary = (req, res) => {
+    res.json({
+        state : 1,
+        salary : [1200, 3250, 900, 12000]
+    })
 }
